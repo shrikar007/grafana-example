@@ -15,7 +15,7 @@
 - `http://localhost:500`
 
 ###Output
-![alt text](https://github.com/shrikar007/grafana-example/blob/master/assets/Screenshot from 2021-07-30 12-55-44.png?raw=true)
+![alt text](https://github.com/shrikar007/grafana-example/blob/master/assets/output.png?raw=true)
 
 
 
