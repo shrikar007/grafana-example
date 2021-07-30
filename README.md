@@ -17,7 +17,7 @@
 ### Prometheus Metrics view
 - `http://localhost:3000/metrics`
 
-### Dashboard Metrics view
+### Prometheus Dashboard view
 - `http://localhost:9090/`
 
 ### Output
