@@ -1,0 +1,33 @@
+version: "3.4"
+services:
+  grafana-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: grafana-app
+    restart: always
+    ports:
+      - 3000:3000
+  prometheus:
+    image: prom/prometheus:v2.9.2
+    ports:
+      - 9090:9090
+    volumes:
+      - ./prometheus:/etc/prometheus/
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    depends_on:
+      - grafana-app
+  grafana:
+    image: grafana/grafana:6.1.6
+    ports:
+      - 5000:3000
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+    depends_on:
+      - prometheus
