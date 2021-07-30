@@ -14,7 +14,8 @@
 ### Grafana Dashboard view
 - `http://localhost:500`
 
-###Output
+### Output
+
 ![alt text](https://github.com/shrikar007/grafana-example/blob/master/assets/output.png?raw=true)
 
 
