@@ -12,7 +12,13 @@
 
 
 ### Grafana Dashboard view
-- `http://localhost:500`
+- `http://localhost:5000`
+
+### Prometheus Metrics view
+- `http://localhost:3000/metrics`
+
+### Dashboard Metrics view
+- `http://localhost:9090/`
 
 ### Output
 
