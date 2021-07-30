@@ -11,10 +11,12 @@ import (
 
 func Init() *chi.Mux {
 	var resp middlerware.Response
-	router := chi.NewRouter()
+
+	//Register custom metrices
 	prometheus.Register(middlerware.TotalRequests)
 	prometheus.Register(middlerware.ResponseStatus)
 	prometheus.Register(middlerware.HttpDuration)
+	router := chi.NewRouter()
 
 	router.Use(middlerware.PrometheusMiddleware)
 	router.Handle("/metrics", promhttp.Handler())

@@ -18,7 +18,7 @@ func NewResponseWriter(w http.ResponseWriter) *Response {
 
 var TotalRequests = prometheus.NewCounterVec(
 	prometheus.CounterOpts{
-		Name: "http_requests_total",
+		Name: "http_requests_total_custom",
 		Help: "Number of get requests.",
 	},
 	[]string{"path"},
@@ -26,14 +26,14 @@ var TotalRequests = prometheus.NewCounterVec(
 
 var ResponseStatus = prometheus.NewCounterVec(
 	prometheus.CounterOpts{
-		Name: "response_status",
+		Name: "response_status_custom",
 		Help: "Status of HTTP response",
 	},
 	[]string{"status"},
 )
 
 var HttpDuration = promauto.NewHistogramVec(prometheus.HistogramOpts{
-	Name: "http_response_time_seconds",
+	Name: "http_response_time_seconds_custom",
 	Help: "Duration of HTTP requests.",
 }, []string{"path"})
 
